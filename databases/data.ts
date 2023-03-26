@@ -5,11 +5,11 @@ import { Wage } from "../entities/wage";
 
 const AppDataSource = new DataSource({
   type: "mysql",
-  host: "localhost",
-  port: 3306,
-  username: "root",
-  password: "root",
-  database: "test",
+  host: process.env.HOST_DATABASE,
+  port: Number(process.env.PORT_DATABASE),
+  username: process.env.USERNAME_DATAASE,
+  password: process.env.PASSWORD_DATABASE,
+  database: process.env.DATABASE_DATABASE,
   entities: [Department, Employee, Wage],
   logging: true,
   synchronize: true,
